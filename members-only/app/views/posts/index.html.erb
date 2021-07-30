@@ -1,0 +1,33 @@
+<p id="notice"><% notice %></p>
+
+<%= image_tag "logo.png", alt: "Member's Only Posts",
+                          class: "logo" %>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <% if user_signed_in? %>
+          <td><i><%= post.user.name unless post.user.nil? %></i></td>
+        <% end %>
+        <td><%= post.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path %>
+<% end %>

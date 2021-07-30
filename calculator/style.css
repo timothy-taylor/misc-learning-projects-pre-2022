@@ -1,0 +1,61 @@
+main {
+  margin: auto auto;
+  display: flex;
+}
+
+#calculator {
+    margin-left: 25%;
+    padding: 42px;
+    border: 1px solid grey;
+    border-radius: 42px;
+}
+
+.display {
+    height: 1.25em;
+    margin: 15px auto;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid grey;
+    border-radius: 42px;
+    background-color: lightgrey;
+    text-align: right;
+    font-family: monospace;
+    font-size: 1.25em;
+}
+
+footer {
+  padding: 15px 15px;
+  max-width: 25%;
+  font-style: italic;
+  text-align: justify;
+}
+
+.buttons {
+    display: grid;
+    grid: repeat(5, 84px) / repeat(4, 84px);
+}
+
+button {
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+    font-size: 1.75em;
+    color: grey;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button:hover {
+    border: 3px outset lightgrey;
+}
+
+#equals {
+    background-color: yellow;
+}
+
+#stateIcon {
+    background-color: #EFEFEF;
+    transition-property: background-color;
+    transition-duration: 333ms;
+}
