@@ -23,17 +23,16 @@ const colorChooser = (id) => {
 
 const buttons = Array.from(document.querySelectorAll('.calcbutton'));
 buttons.forEach(number => number.addEventListener('click', function (event) {
-  if (event.srcElement.id === 'number') {
+  if (event.target.id === 'number') {
     const numericalValue = event.target.innerHTML;
     numberPressed(numericalValue);
   } else {
-    nonNumberParser(event.srcElement.id);
+    nonNumberParser(event.target.id);
   }
-  colorChooser(event.srcElement.id);
+  colorChooser(event.target.id);
 }));
 
 window.addEventListener('keypress', function (event) {
   keyPressParser(event.key);
   colorChooser(event.key);
 });
-
